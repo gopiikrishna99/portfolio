@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<style>
+    select {
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 200px;
+        width: auto;
+    }
+
+</style>
+<img src="/static/1.jpg" width="1250" height="200">
+</head>
+<script language="javascript">
+function check(form)
+{
+	if(form.datasetfile.value == "")
+	{
+		alert("Error Select DataSet")
+		return false;
+	}
+	else
+	{
+			return true;
+	}
+
+}
+
+</script>
+
+
+
+
+
+
+<form action="/main" method="POST">
+
+<table width="100%" bgcolor="FFFFFF" align="center" style="border: 1px solid red">
+<tbody style="display: block; border: 1px solid green; height: 360px; overflow-y: scroll">
+
+<tr>
+<td colspan=5><center><font size=6><b>Resturant Details</b></font></center></td>
+
+</tr>
+
+<tr>
+<td>
+
+</td>
+<td height="100">Select Dataset:</td>
+<td height="100">
+
+<input type="file" name="datasetfile">
+</td>
+
+</tr>
+
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+
+<tr>
+
+<td><center><input type="submit" onclick="return check(this.form)" value="COUNT MODEL" formaction="/countmodel" ></center></td>
+<td><center><input type="submit" onclick="return check(this.form)" value="TFIDF MODEL" formaction="/tfidfmodel"></center></td>
+<td><center><input type="submit" onclick="return check(this.form)" value="NGRAM MODEL" formaction="/ngrammodel" ></center></td>
+
+
+
+</tr>
+</tbody>
+</table>
+
+
+</form>
+
+</br>
+</br>
+</br>
+</br>
+{% if result %}
+<table style="width:100%" bgcolor="#FFFFFF"><tbody><tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+
+        <th>Zipcode</th>
+        <th>Cuisines</th>
+        <th>AverageCost</th>
+        <th>Rating</th>
+        <th>Phone</th>
+        <th>ReviewCount</th>
+
+        </tr>
+
+
+    {% for row in result %}
+
+
+
+<tr>
+        <td> {{ row[0] }}</td>
+        <td> {{ row[1] }}</td>
+        <td> {{ row[2] }}</td>
+        <td> {{ row[3] }}</td>
+        <td> {{ row[4] }}</td>
+        <td> {{ row[5] }}</td>
+        <td> {{ row[6] }}</td>
+        <td> {{ row[7] }}</td>
+        <td> {{ row[8] }}</td>
+
+    </tr>
+    {% endfor %}
+    {% endif %}
+</tbody></table>
+</body>
+</html>
